@@ -1,0 +1,96 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+
+using namespace std;
+int main ()
+{
+    string nama[25];
+    int pil, a, i, j, nim[25], ntu[25], nuts[25], nuas[25];
+    int bbl, sn, minn=999, maxx=0, car, cari=0;
+    char ulg;
+    float na[25];
+    do{
+        system("cls");
+        cout<<"DATA NILAI MAHASISWA JURUSAN TEKNIK INFORMATIKA"<<endl;
+        cout<<"                                   |"<<endl;
+        cout<<"1. Input data                      |"<<endl;
+        cout<<"2. Mengurutkan Data                |"<<endl;
+        cout<<"3. Mencari Data                    |"<<endl;
+        cout<<"4. Keluar                          |"<<endl;
+        cout<<"Masukkan Pilihan anda: "; cin>>pil;
+        cout<<"___________________________________|"<<endl;
+        switch(pil){
+            case 1: system("cls");
+                cout<<"Masukkan jumlah mahasiswa : "; cin>>a;
+                for(i=0; i<a; i++){
+                    cout<<"NIM             : ";cin>>nim[i];
+                    cout<<"Nama Mahasiswa  : ";cin>>nama[i];
+                    cout<<"Nilai Tugas     : ";cin>>ntu[i];
+                    cout<<"Nilai UTS       : ";cin>>nuts[i];
+                    cout<<"Nilai UAS       : ";cin>>nuas[i];
+                    cout<<endl;
+                    na[i]=(ntu[i]+nuts[i]+nuas[i])/3;
+                }
+                cout<<endl;
+                break;
+            case 2: system("cls");
+                cout<<"NO\t NIM\t NAMA MAHASISWA\t N. TUGAS N. UTS N. UAS N. AKHIR"<<endl;
+                cout<<"================================================================================"<<endl;
+                for(i=0; i<a; i++){
+                    cout<<i+1<<"\t "<<nim[i]<<"\t "<<nama[i]<<"\t\t "<<ntu[i]<<"\t "<<nuts[i]<<"\t "<<nuas[i]<<"\t "<<na[i]<<endl;
+                }
+                cout<<"================================================================================"<<endl;
+                for(i=0; i<a; i++){
+                    if(nim[i]<minn){
+                        minn=nim[i];
+                    }
+                    if(nim[i]>maxx){
+                        maxx=nim[i];
+                    }
+                }
+                cout<<"\nHasil Pengurutan Bubble Sorting: \n";
+                do{
+                    i=0;
+                    for(j=1; j<a; j++){
+                        bbl=i;
+                        if(nim[bbl]<nim[j]){
+                            bbl=j;
+                        }
+                        sn=nim[j];
+                        nim[j]=nim[bbl];
+                        nim[bbl]=sn;
+                        i++;
+                    }
+                    if(nim[0]!=minn && nim[a-1]!=maxx){
+                        i=0;
+                    }
+                } while(nim[0]!=minn);
+                for(i=0; i<a; i++){
+                    cout<<i+1<<". "<<nim[i]<<endl;
+                }
+                break;
+            case 3: system("cls");
+                cout<<"Cari Data \n\n";
+                cout<<"Masukkan NIM: "; cin>>car;
+                for(i=0; i<a; i++){
+                    if(nim[i]==car){
+                        cari=1;
+                        cout<<"NIM          : "<<nim[i]<<endl;
+                        cout<<"Nama         : "<<nama[i]<<endl;
+                        cout<<"Nilai Tugas  : "<<ntu[i]<<endl;
+                        cout<<"Nilai UTS    : "<<nuts[i]<<endl;
+                        cout<<"Nilai UAS    : "<<nuas[i]<<endl<<endl;
+                    }
+                }
+                if(cari==0){
+                    cout<<"Data tidak di temukan \n\n";
+                }
+                break;
+            default: system("cls");
+                cout<<"Anda Akan keluar dari aplikasi...\n";
+                break;
+        }
+        cout<<"Apakah anda ingin mengulang?(y/t) "; cin>>ulg;
+    } while(ulg=='Y' || ulg=='y');
+}
