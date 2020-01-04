@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+
+using namespace std;
+
+struct movies_t{
+    char title[50];
+    int year;
+}mine, yours;
+
+void printmovie(movies_t movie){
+    cout<<movie.title;
+    cout<<"("<<movie.year<<")\n";
+}
+
+main(){
+    char buffer[50];
+    strcpy(mine.title,"Finding Nemo");
+    mine.year=2003;
+
+    cout<<"Masukkan Judul Film Favorit: ";
+    cin.getline(yours.title,50);
+    cout<<"Masukkan Tahun: ";
+    cin.getline(buffer,50);
+    yours.year=atoi(buffer);
+
+    cout<<"Judul Film yang ada: ";
+    printmovie(mine);
+    cout<<"Judul Film Favorit kamu adalah: ";
+    printmovie(yours);
+    return 0;
+}
+
