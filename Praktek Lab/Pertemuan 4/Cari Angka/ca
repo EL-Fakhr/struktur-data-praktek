@@ -1,0 +1,35 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+main(){
+    int ang[10]={5,2,6,2,6,1,9,7,8,10};
+    int i, car, con[10];
+    bool con1=false;
+    cout<<"Masukan angka yang di cari: "; cin>>car;
+    for(i=0; i<10; i++){
+        if(ang[i]==car){
+            con[i]=i+1;
+            con1=true;
+        }
+        else if(ang[i]!=car){
+            con[i]=0;
+        }
+    }
+    if(con1==true){
+        cout<<"Angka "<<car<<" Terletak di urutan ke-";
+    }
+    int con2=0;
+    for(i=0; i<10; i++){
+        if(con[i]>0){
+            cout<<con[i]<<", ";
+            con2=1;
+        }
+    }
+    cout<<"-"<<endl;
+    if(con2==0){
+        cout<<"Angka tidak di temukan!!!"<<endl;
+    }
+
+}
