@@ -1,0 +1,19 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+
+using namespace std;
+
+main(){
+    cout<<"SIAP??? tekan enter..."<<endl;
+    getch();
+    system("cls");
+    int i, j;
+    for(i=0; i<10; i++){
+        cout<<"+ ";
+        for(j=0; j<i; j++){
+            cout<<"* ";
+        }
+            cout<<endl;
+    }
+}
