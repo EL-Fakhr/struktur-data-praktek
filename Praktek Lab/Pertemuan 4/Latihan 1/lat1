@@ -1,0 +1,14 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+main(){
+int i, ang[10]={5,2,6,2,6,1,9,7,8,10};
+float rat, jml=0;
+for(i=0; i<10; i++){
+    jml=jml+ang[i];
+}
+rat=jml/10;
+cout<<"Rata-ratanya adalah "<<rat<<endl;
+}
