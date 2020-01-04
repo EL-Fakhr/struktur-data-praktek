@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+main(){
+string kat="INFORMATIKA";
+int i, j;
+for(i=kat.length(); i>0; i--){
+    for(j=0; j<i; j++){
+        cout<<kat[j];
+    }
+    cout<<endl;
+}
+}
