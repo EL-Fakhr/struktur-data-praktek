@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+struct time{
+    int jam;
+    int minn;
+};
+
+struct rencana{
+    struct time awal;
+    struct time akhir;
+    int x;
+    int y;
+};
+
+struct rencana kerja={11, 22, 33, 44, 5, 6};
+
+funct(struct rencana oo){
+    cout<<"dalam fungsi (a):\n"<<oo.awal.jam<<" "<<oo.awal.minn<<" "<<oo.akhir.jam<<" "<<oo.akhir.minn<<" "<<oo.x<<" "<<oo.y<<endl;
+
+    oo.awal.jam=111;
+    oo.y=555;
+    cout<<"dalam fungsi (a):\n"<<oo.awal.jam<<" "<<oo.awal.minn<<" "<<oo.akhir.jam<<" "<<oo.akhir.minn<<" "<<oo.x<<" "<<oo.y<<endl;
+};
+
+main(){
+    kerja.akhir.minn=40;
+    kerja.y=66;
+    cout<<"proses main sebelum fungsi:\n"<<kerja.awal.jam<<" "<<kerja.awal.minn<<" "<<kerja.akhir.jam<<" "<<kerja.akhir.minn<<" "<<kerja.x<<" "<<kerja.y<<endl;
+
+    funct(kerja);
+    cout<<"proses main sesudah fungsi:\n"<<kerja.awal.jam<<" "<<kerja.awal.minn<<" "<<kerja.akhir.jam<<" "<<kerja.akhir.minn<<" "<<kerja.x<<" "<<kerja.y<<endl;
+}
