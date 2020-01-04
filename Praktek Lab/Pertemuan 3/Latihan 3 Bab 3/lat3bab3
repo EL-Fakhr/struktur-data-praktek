@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+
+using namespace std;
+
+#define N_MOVIES 5
+
+struct movies_t{
+    char title[50];
+    int year;
+}film[N_MOVIES];
+
+void printmovie(movies_t movie){
+    cout<<movie.title;
+    cout<<"("<<movie.year<<")\n";
+}
+
+main(){
+    char buffer[50];
+    int i;
+    for(i=0; i<N_MOVIES; i++){
+        cout<<"Masukkan Judul Film Favorit: ";
+        cin.getline(film[i].title,50);
+        cout<<"Masukkan Tahun: ";
+        cin.getline(buffer,50);
+        film[i].year=atoi(buffer);
+    }
+
+    cout<<"Judul Film Favorit kamu adalah: ";
+    for(i=0; i<N_MOVIES; i++){
+        printmovie(film[i]);
+    }
+    return 0;
+}
+
